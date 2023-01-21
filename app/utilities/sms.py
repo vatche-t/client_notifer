@@ -20,8 +20,11 @@ def notif_sms():
             fc = file.read()
             time_stamp = pickle.loads(fc)
         if (now - time_stamp).total_seconds() > 60 * 60:
-            requests.get(f"http://ippanel.com:8080/?apikey=bsvLPLdjEsnYJeA43V-OAZ1oQNLOHODs_jsemvjIRPU=&pid=yym1bgzvn9t6szt&fnum=3000505&tnum=09129332760&p1=ip&v1={ip}&v2=1596")
+            requests.get(f"http://ippanel.com:8080/?apikey=**********U=&pid=yym1bgzvn9t6szt&fnum=******&tnum=*****&p1=ip&v1={ip}&v2=******")
         else:
             print(f"client {ip} is connected....")
     
 #sms  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
+
+
+#payamtak 
