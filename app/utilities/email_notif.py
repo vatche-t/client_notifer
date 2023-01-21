@@ -4,7 +4,8 @@ from datetime import datetime
 
 import sys
 sys.path.insert(0,'../..')
-import configs
+from ... import configs
+
 
 import smtplib
 import ssl

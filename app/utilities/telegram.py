@@ -5,7 +5,7 @@ import requests
 import sys
 sys.path.insert(0,'../..')
 
-import configs
+from ... import configs
 
 import utilities as util
 now = datetime.utcnow()
