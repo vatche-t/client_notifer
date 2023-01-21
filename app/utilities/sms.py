@@ -2,10 +2,6 @@ import pickle
 from datetime import datetime
 import requests
 
-import sys
-sys.path.insert(0,'../..')
-from ... import configs
-
 
 import utilities as util
 now = datetime.utcnow()
