@@ -9,4 +9,3 @@ CONFIGS = {
     "CHAT_ID" : '[telegram chat id]',
 }
 
-

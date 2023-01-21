@@ -6,7 +6,7 @@ import subprocess
 import time
 
 while True: 
-    process = subprocess.run(['python3', 'utilities.py'], timeout=40)
+    process = subprocess.run(['python3', 'utilities/utilities.py'], timeout=40)
     time.sleep(300)
 
 
