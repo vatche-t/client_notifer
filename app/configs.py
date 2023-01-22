@@ -1,11 +1,12 @@
 
 CONFIGS = {
+    "URL" : "[url to request exe: http://127****]",
     "TIME": 60*20,
-    "TIMEOUT": 60*120,
     "RUN": 300, 
-    "e_sender": "vatche.selleryar@gmail.com",
-    "e_pass": "nvulyeukquqvkmin",
-    "e_reciver": "vatche.thorossian@gmail.com",
-    "API_TOKEN" : '5977566963:AAEVWXcwN9miRHLyq2etTq-qP1w8wFsrz90',
-    "CHAT_ID" : '260376634',
+    "e_sender": "[your email]]",
+    "e_pass": "[your pass]",
+    "e_reciver": "[reciver email]]",
+    "API_TOKEN" : '[telegram api token]',
+    "CHAT_ID" : '[telegram chat id]',
 }
+
