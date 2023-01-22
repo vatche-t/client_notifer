@@ -26,5 +26,6 @@ def notif_sms():
     
 #sms  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
 
+notif_sms()
 
 #payamtak 

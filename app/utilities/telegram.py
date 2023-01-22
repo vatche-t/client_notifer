@@ -4,8 +4,7 @@ import requests
 
 import sys
 sys.path.insert(0,'../..')
-
-from ... import configs
+import configs
 
 import utilities as util
 now = datetime.utcnow()
@@ -39,8 +38,7 @@ def notif_telegram():
          if (now - time_stamp).total_seconds() > 60 * 5:
             send_to_telegram(f"Client {ip} has been disconnected for more than {now - time_stamp} minutes at: {now}")
          else:
-               send_to_telegram(f"client {ip} is connected....")
+               print(f"client {ip} is connected....")
 #telegram  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
-
 
 notif_telegram()

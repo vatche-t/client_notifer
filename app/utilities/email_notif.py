@@ -4,7 +4,7 @@ from datetime import datetime
 
 import sys
 sys.path.insert(0,'../..')
-from ... import configs
+import configs
 
 
 import smtplib
@@ -45,3 +45,5 @@ def notif_email():
         else:
             print(f"client {ip} is connected....")
 #email  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
+
+notif_email()
