@@ -1,6 +1,6 @@
 CONFIGS = {
     "URL" : "[url to request exe: http://127****]",
-    "TIME": 60*20,
+    "TIMEOUT": 60*120,
     "RUN": 300, 
     "e_sender": "[your email]]",
     "e_pass": "[your pass]",
