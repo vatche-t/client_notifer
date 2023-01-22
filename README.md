@@ -16,4 +16,4 @@ run app/main.py to start notification system  (adding funcionality soon ...  )
 
 
 
-!\[my badge\](https://badgen.net/badge/hello/world/red?icon=twitter)
+!\[my badge\](https://img.shields.io/static/v1?label=github&message=clientchecker&color=green)
