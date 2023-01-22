@@ -13,3 +13,7 @@ added config.py for better configurations
 run watchdog.py to run the server (heartbeat monitoring)
 run ~/main.py for client request 
 run app/main.py to start notification system  (adding funcionality soon ...  )
+
+
+
+https://img.shields.io/static/v1?label=<LABEL>&message=<clientchecker>&color=<green>
