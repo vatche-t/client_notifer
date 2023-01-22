@@ -1,4 +1,4 @@
-#Clien Checker
+#Client Checker
 
 A better version of Notifing CLients connectivity #v2
 
