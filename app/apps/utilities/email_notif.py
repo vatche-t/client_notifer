@@ -36,7 +36,7 @@ def compose_email():
 
 def notif_email():
       for ip in util.get_ips():
-        filename = f'../../last_beat/{ip}'
+        filename = f'../last_beat/{ip}'
         with open(filename, 'rb')as file:
             fc = file.read()
             time_stamp = pickle.loads(fc)
