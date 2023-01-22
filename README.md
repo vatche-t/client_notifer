@@ -20,3 +20,5 @@ added config.py for better configurations.
 
 
 ![my badge](https://img.shields.io/static/v1?label=github&message=clientchecker&color=green)
+![my badge](https://img.shields.io/static/v1?label=python&message=3.11&color=yellow)
+
