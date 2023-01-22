@@ -16,6 +16,7 @@ added config.py for better configurations.
 
 #### fixed main.py 22/01/02032
 
++ Running on ubunutu server (22.04LTS)
 
 
 ![my badge](https://img.shields.io/static/v1?label=github&message=clientchecker&color=green)
