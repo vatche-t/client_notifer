@@ -18,6 +18,8 @@ A better version of Notifing CLients connectivity #v2.
 
 + Running on ubunutu server (22.04LTS)
 
+* docker-compose up --build ( run the server )
+
 
 ![my badge](https://img.shields.io/static/v1?label=github&message=clientchecker&color=green)
 ![my badge](https://img.shields.io/static/v1?label=python&message=3.11&color=yellow)
