@@ -14,7 +14,7 @@ added config.py for better configurations.
 2. run ~/main.py for client request.
 3. run app/utilities/main.py to start notification system.
 
-#### fixed main.py 22/01/02032
+#### fixed main.py 22/01/2032
 
 + Running on ubunutu server (22.04LTS)
 
