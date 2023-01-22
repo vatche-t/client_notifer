@@ -2,19 +2,19 @@
 
 A better version of Notifing CLients connectivity #v2.
 
-### what differs from v1
+### What differs from v1
 
-added sms notification system.
-added on app call to run.
-added config.py for better configurations. 
+- Added sms notification system.
+- Added on app call to run.
+- Added config.py for better configurations. 
 
 ## RUN
 
-1. run watchdog.py to run the server (heartbeat monitoring).
-2. run ~/main.py for client request.
-3. run app/utilities/main.py to start notification system.
+1. Run watchdog.py to run the server (heartbeat monitoring).
+2. Run ~/main.py for client request.
+3. Run app/utilities/main.py to start notification system.
 
-#### fixed main.py 22/01/2032
+#### Fixed main.py 22/01/2032
 
 + Running on ubunutu server (22.04LTS)
 
