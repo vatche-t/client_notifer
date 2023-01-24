@@ -9,6 +9,4 @@ def get_ips():
     return results
 
 
-for ip in get_ips():
-    print(ip)
     
