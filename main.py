@@ -1,9 +1,8 @@
+import os
 import subprocess
 import time
 
-import configs
-hour =  configs.CONFIGS.get('TIMEOUT')
-
+hour = 60*120
 
 timeout = time.time() + hour
 

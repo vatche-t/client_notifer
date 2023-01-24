@@ -11,7 +11,11 @@ from email.message import EmailMessage
 
 from utilities import get_ips
 
-dotenv_path = Path('root/work/client_check_v2/.env')
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) #
+CONFIG_PATH = os.path.join(ROOT_DIR, '.env')
+
+
+dotenv_path = Path('CONFIG_PATH')
 load_dotenv(dotenv_path=dotenv_path)
 last_beat = os.environ['PATH_LASTBEAT']
 sender = os.environ['EMAIL_SEND']

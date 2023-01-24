@@ -2,15 +2,15 @@ import os
 import pickle 
 from datetime import datetime
 import requests
+
 from dotenv.main import load_dotenv
 from pathlib import Path
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) #
+CONFIG_PATH = os.path.join(ROOT_DIR, '.env')
 
-import sys
-sys.path.append('/root/work/client_checker_v2')
-import configs
 
-dotenv_path = Path('root/work/client_check_v2/.env')
+dotenv_path = Path('CONFIG_PATH')
 load_dotenv(dotenv_path=dotenv_path)
 last_beat = os.environ['PATH_LASTBEAT']
 
