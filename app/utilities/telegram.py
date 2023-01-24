@@ -1,17 +1,15 @@
+import os
 import pickle 
 from datetime import datetime
 import requests
-
 import sys
-sys.path.insert(0,'../..')
+sys.path.append('/root/work/client_checker_v2')
 import configs
 
-import utilities as util
+
+
+from utilities import get_ips
 now = datetime.utcnow()
-
-
-
-
 
 
 
@@ -30,15 +28,15 @@ def send_to_telegram(message):
         
 
 def notif_telegram():
-    for ip in util.get_ips():
-         filename = f'../last_beat/{ip}'
+    for ip in get_ips():
+         filename = f'/root/work/client_checker_v2/app/utilities/last_beat/{ip}'
          with open(filename, 'rb')as file:
             fc = file.read()
             time_stamp = pickle.loads(fc)
          if (now - time_stamp).total_seconds() > 60 * 5:
             send_to_telegram(f"Client {ip} has been disconnected for more than {now - time_stamp} minutes at: {now}")
          else:
-               print(f"client {ip} is connected....")
+               print(f"From Telegram:   client {ip} is connected....")
 #telegram  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
 
 notif_telegram()

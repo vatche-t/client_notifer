@@ -1,24 +1,26 @@
 
 import pickle 
 from datetime import datetime
-
-import sys
-sys.path.insert(0,'../..')
+import sys 
+sys.path.append('/root/work/client_checker_v2')
 import configs
-
 
 import smtplib
 import ssl
 from email.message import EmailMessage
 
-import utilities as util
+from utilities import get_ips
+
+
+
 now = datetime.utcnow()
+
 
 
 #email  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
 def compose_email():
      context = ssl.create_default_context()
-     for ip in util.get_ips():
+     for ip in get_ips():
         with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                                         
                 subject = 'Client has been disconnected for to long!!'
@@ -32,18 +34,19 @@ def compose_email():
                 em.set_content(body)
                 smtp.login(configs.CONFIGS.get('e_sender'), configs.CONFIGS.get('e_pass'))
                 smtp.sendmail(configs.CONFIGS.get('e_sender'), configs.CONFIGS.get('e_reciver'), em.as_string())
+                
 
 
 def notif_email():
-      for ip in util.get_ips():
-        filename = f'../last_beat/{ip}'
+      for ip in get_ips():
+        filename = f'/root/work/client_checker_v2/app/utilities/last_beat/{ip}'
         with open(filename, 'rb')as file:
             fc = file.read()
             time_stamp = pickle.loads(fc)
         if (now - time_stamp).total_seconds() > 60 * 20:
             compose_email()
         else:
-            print(f"client {ip} is connected....")
+            print(f"From Email:   client {ip} is connected....")
 #email  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
 
 notif_email()

@@ -11,7 +11,7 @@ app = Flask(__name__)
 def get_my_ip():
     timestamp = datetime.datetime.utcnow()
     ip  = request.remote_addr
-    with open(f'apps/last_beat/{request.remote_addr}', 'wb') as file:
+    with open(f'app/utilities/last_beat/{request.remote_addr}', 'wb') as file:
         file.write(pickle.dumps(timestamp))
         file.write(pickle.dumps(ip))
     ip = jsonify({'ip': request.remote_addr}), 200
