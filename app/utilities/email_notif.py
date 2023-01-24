@@ -3,7 +3,6 @@ import pickle
 from datetime import datetime
 
 from dotenv.main import load_dotenv
-from pathlib import Path
 
 import smtplib
 import ssl
@@ -11,12 +10,9 @@ from email.message import EmailMessage
 
 from utilities import get_ips
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) #
-CONFIG_PATH = os.path.join(ROOT_DIR, '.env')
 
 
-dotenv_path = Path('CONFIG_PATH')
-load_dotenv(dotenv_path=dotenv_path)
+load_dotenv()
 last_beat = os.environ['PATH_LASTBEAT']
 sender = os.environ['EMAIL_SEND']
 e_pass = os.environ['EMAIL_PASS']

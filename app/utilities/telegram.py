@@ -3,15 +3,10 @@ import pickle
 from datetime import datetime
 import requests
 
+
 from dotenv.main import load_dotenv
-from pathlib import Path
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) #
-CONFIG_PATH = os.path.join(ROOT_DIR, '.env')
-
-
-dotenv_path = Path('CONFIG_PATH')
-load_dotenv(dotenv_path=dotenv_path)
+load_dotenv()
 last_beat = os.environ['PATH_LASTBEAT']
 
 from utilities import get_ips
