@@ -1,7 +1,3 @@
-# from utilities.utilities import notif_telegram as telegram
-# from utilities.utilities import notife_email as email
-# from utilities.utilities import notif_sms as sms
-
 import subprocess
 import time
 

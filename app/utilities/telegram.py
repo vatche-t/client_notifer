@@ -2,11 +2,17 @@ import os
 import pickle 
 from datetime import datetime
 import requests
+from dotenv.main import load_dotenv
+from pathlib import Path
+
+
 import sys
 sys.path.append('/root/work/client_checker_v2')
 import configs
 
-
+dotenv_path = Path('root/work/client_check_v2/.env')
+load_dotenv(dotenv_path=dotenv_path)
+last_beat = os.environ['PATH_LASTBEAT']
 
 from utilities import get_ips
 now = datetime.utcnow()
@@ -16,8 +22,8 @@ now = datetime.utcnow()
 #telegram  - - - -  - - - - - - - - - - - - - - - - - - - - - - -
 def send_to_telegram(message):
 
-    apiToken = configs.CONFIGS.get('API_TOKEN')
-    chatID = configs.CONFIGS.get('CHAT_ID')
+    apiToken = os.environ['API_TOKEN']
+    chatID = os.environ['CHAT_ID']
     apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
 
     try:
@@ -29,7 +35,7 @@ def send_to_telegram(message):
 
 def notif_telegram():
     for ip in get_ips():
-         filename = f'/root/work/client_checker_v2/app/utilities/last_beat/{ip}'
+         filename = f"{last_beat}/{ip}"
          with open(filename, 'rb')as file:
             fc = file.read()
             time_stamp = pickle.loads(fc)

@@ -1,9 +1,9 @@
-
+import os
 import pickle 
 from datetime import datetime
-import sys 
-sys.path.append('/root/work/client_checker_v2')
-import configs
+
+from dotenv.main import load_dotenv
+from pathlib import Path
 
 import smtplib
 import ssl
@@ -11,7 +11,12 @@ from email.message import EmailMessage
 
 from utilities import get_ips
 
-
+dotenv_path = Path('root/work/client_check_v2/.env')
+load_dotenv(dotenv_path=dotenv_path)
+last_beat = os.environ['PATH_LASTBEAT']
+sender = os.environ['EMAIL_SEND']
+e_pass = os.environ['EMAIL_PASS']
+reciver = os.environ['EMAIL_RECIVER']
 
 now = datetime.utcnow()
 
@@ -28,18 +33,18 @@ def compose_email():
                 'Client {ip} has been disconnected for more than 20 minutes at: {now}'
                 """
                 em = EmailMessage()
-                em['From'] = configs.CONFIGS.get('e_sender')
-                em['To'] = configs.CONFIGS.get('e_reciver')
+                em['From'] = sender
+                em['To'] = reciver
                 em['Subject'] = subject
                 em.set_content(body)
-                smtp.login(configs.CONFIGS.get('e_sender'), configs.CONFIGS.get('e_pass'))
-                smtp.sendmail(configs.CONFIGS.get('e_sender'), configs.CONFIGS.get('e_reciver'), em.as_string())
+                smtp.login(sender, e_pass)
+                smtp.sendmail(sender, reciver, em.as_string())
                 
 
 
 def notif_email():
       for ip in get_ips():
-        filename = f'/root/work/client_checker_v2/app/utilities/last_beat/{ip}'
+        filename = f'{last_beat}/{ip}'
         with open(filename, 'rb')as file:
             fc = file.read()
             time_stamp = pickle.loads(fc)
