@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+title: 'Client Notifier'
+labels: 'Github - Python'
+assignees: 'everyone'
 
 ---
 
